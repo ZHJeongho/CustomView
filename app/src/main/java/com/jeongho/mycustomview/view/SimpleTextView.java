@@ -43,7 +43,7 @@ public class SimpleTextView extends TextView{
         canvas.drawRect(10, 10, getMeasuredWidth() - 10, getMeasuredHeight() - 10, mPaint2);
 
         canvas.save();
-        canvas.translate(10, 0);
+        canvas.translate(50, 0);
         super.onDraw(canvas);
         canvas.restore();
     }
