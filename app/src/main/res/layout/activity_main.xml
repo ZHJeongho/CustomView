@@ -23,6 +23,13 @@
         cv:circle_width="2dp"
         cv:circle_color="@color/colorPrimary"
         android:background="#F5DEB3"/>
+    <EditText
+        android:background="@drawable/edit_background"
+        android:layout_below="@id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

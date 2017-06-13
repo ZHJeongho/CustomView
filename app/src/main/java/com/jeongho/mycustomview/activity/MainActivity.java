@@ -1,11 +1,11 @@
 package com.jeongho.mycustomview.activity;
 
-import android.animation.ValueAnimator;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.jeongho.mycustomview.R;
@@ -77,17 +77,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //params.leftMargin += 100;
                 //mCircleView.requestLayout();
                 //4.动画
-                final int startX = 0;
-                final int deltaX = 100;
-                ValueAnimator animator = ValueAnimator.ofInt(0, 1).setDuration(1000);
-                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        float fraction = animation.getAnimatedFraction();
-                        mCircleView.scrollTo((int) (startX + fraction * deltaX), 0);
-                    }
-                });
-                animator.start();
+//                final int startX = 0;
+//                final int deltaX = 100;
+//                ValueAnimator animator = ValueAnimator.ofInt(0, 1).setDuration(1000);
+//                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//                    @Override
+//                    public void onAnimationUpdate(ValueAnimator animation) {
+//                        float fraction = animation.getAnimatedFraction();
+//                        mCircleView.scrollTo((int) (startX + fraction * deltaX), 0);
+//                    }
+//                });
+//                animator.start();
+
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) mCircleView.getLayoutParams();
+                marginLayoutParams.leftMargin = mCircleView.getLeft() + 200;
+                mCircleView.setLayoutParams(marginLayoutParams);
                 break;
             case R.id.btn_start:
                 startAnimation(true);
